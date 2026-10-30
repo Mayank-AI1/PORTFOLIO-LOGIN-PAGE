@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow:hidden;
+}
+
+/* Glow Background */
+body::before,
+body::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(150px);
+}
+
+body::before{
+    top:-100px;
+    left:-100px;
+    background:#00F5C4;
+    opacity:.35;
+}
+
+body::after{
+    bottom:-100px;
+    right:-100px;
+    background:#63D9B5;
+    opacity:.35;
+}
+
+/* Login Box */
+.login-box{
+    width:380px;
+    min-height:580px;
+    padding:30px;
+    background:rgba(20,20,20,.95);
+    border:1px solid rgba(0,245,196,.3);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    position:relative;
+    overflow:hidden;
+    animation:fadeUp .8s ease;
+}
+
+/* Forms */
+.form{
+    display:none;
+    width:100%;
+}
+
+.form.active{
+    display:block;
+}
+
+h2{
+    text-align:center;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+/* Input */
+.input-box{
+    margin-bottom:15px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#1c1c1c;
+    color:#fff;
+    transition:.3s;
+}
+
+.input-box input:focus{
+    box-shadow:0 0 12px #00F5C4;
+}
+
+/* Password */
+.password-box{
+    position:relative;
+}
+
+.password-box i{
+    position:absolute;
+    top:50%;
+    right:12px;
+    transform:translateY(-50%);
+    color:#aaa;
+    cursor:pointer;
+}
+
+/* Main Button */
+.btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    background:linear-gradient(135deg,#00F5C4,#63D9B5);
+    transition:.3s;
+    overflow:hidden;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px #00F5C4;
+}
+
+.btn.clicked{
+    transform:scale(.95);
+}
+
+/* Divider */
+.divider{
+    text-align:center;
+    margin:15px 0;
+    color:#777;
+}
+
+/* Social Buttons */
+.social{
+    width:100%;
+    padding:10px;
+    margin:7px 0;
+    border-radius:10px;
+    border:1px solid #333;
+    background:#111;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.social i{
+    margin-right:8px;
+}
+
+.social:hover{
+    border-color:#00F5C4;
+    transform:scale(1.03);
+}
+
+/* Switch Text */
+.switch-text{
+    margin-top:18px;
+    text-align:center;
+    color:#aaa;
+}
+
+.switch-text span{
+    color:#00F5C4;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.switch-text span:hover{
+    text-shadow:0 0 10px #00F5C4;
+}
+
+/* FORM ANIMATIONS */
+.show-animation{
+    animation:slideIn .45s ease forwards;
+}
+
+.hide-animation{
+    animation:slideOut .45s ease forwards;
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateX(100%);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideOut{
+    from{
+        opacity:1;
+        transform:translateX(0);
+    }
+    to{
+        opacity:0;
+        transform:translateX(-100%);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+@media(max-width:450px){
+    .login-box{
+        width:90%;
+        padding:25px;
+    }
+}
